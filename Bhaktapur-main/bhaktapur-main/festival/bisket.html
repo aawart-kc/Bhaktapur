@@ -1,17 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biska</title>
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fassi-Dega Temple</title>
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/avenir-next-lt-pro" rel="stylesheet" />
+
+    <style>
+        body {
+            background: #f9f9f9;
+            font-family: 'Avenir Next LT Pro', sans-serif;
+            color: #2d2d2d;
+            margin: 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Weather widget styles inside content */
+        #weather-widget {
+            background: #e0f0ff;
+            color: #154a7c;
+            font-size: 0.9rem;
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(21, 74, 124, 0.3);
+            max-width: 180px;
+            font-weight: 600;
+            text-align: center;
+            user-select: none;
+            margin-left: auto;
+            margin-bottom: 20px;
+        }
+
+        #weather-widget span.temp {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+
+        .note-box {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 16px;
+            /* Removed yellow border */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            max-width: 1000px;
+            margin: 60px auto;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .note-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .note-box h3 {
+            font-size: 1.8rem;
+            color: #222;
+            /* blue */
+            margin-bottom: 16px;
+        }
+
+        .note-box p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .note-box strong {
+            color: #111;
+        }
+
+
+
+        /* Flex container for description and weather */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            flex: 1 1 600px;
+        }
+
+
+        /* Your requested Gallery styles */
+        .gallery-wrap {
+            background: transparent;
+            padding: 60px 0;
+        }
+
+        .section-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .grid-col-gallery-images {
+            flex: 2;
+        }
+
+        .grid-col-gallery-text {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .gallery-grid-rows {
+            display: flex;
+            gap: 16px;
+        }
+
+        .gallery-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .gallery-box {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-box:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-pic {
+            display: block;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            color: white;
+            width: 100%;
+            padding: 6px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        .gallery-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .about-subheading {
+            text-align: center;
+            font-size: 2.2rem;
+        }
+    </style>
 </head>
-<body>
-    <div class="center-div">
-        <h2>Biska Jatra</h2>
-    <img src="../assets/biska.jpg" width="100%" height="800px">
-    <p>Biska Jatra is a vibrant and historic festival celebrated mainly in Bhaktapur, Nepal, marking the Nepali New Year in mid-April. Rooted in Newar tradition, the festival is famous for its thrilling chariot processions where massive wooden chariots of deities like Bhairab and Bhadrakali are pulled through narrow city streets in a symbolic tug-of-war between different parts of the city. Another major event is the erection and later pulling down of a giant ceremonial pole known as Yosin Dyo, symbolizing ancient myths of victory over evil. The celebration is full of energy, with traditional music, dances, feasting, and the joyful throwing of colors, especially in nearby Thimi. Biska Jatra is not just a festival but a deeply rooted cultural expression that brings communities together in celebration of renewal, heritage, and spiritual devotion.</p>
-    </div>
-    
+
+<body class="body-main">
+    <main class="main-wrap">
+
+        <!-- Topbar -->
+        <nav class="topbar">
+            <div class="topbar-inner">
+                <ul class="topbar-menu">
+                    <li><a class="topbar-link" href="../index.html">Home</a></li>
+                    <li><a class="topbar-link" href="../Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mainbar -->
+        <nav class="mainbar">
+            <div class="mainbar-inner">
+                <a class="mainbar-logo-link" href="../index.html"></a>
+                <ul class="mainbar-menu">
+                    <li class="mainbar-item has-sub">
+                        <a href="#" class="mainbar-link">Information</a>
+                        <ul class="sub-menu">
+                            <li class="sub-item has-sub">
+                                <a href="#" class="sub-link">Historic Landmarks</a>
+                                <ul class="sub-menu sub-nested">
+                                    <li><a class="sub-link" href="faasi-Dega.html"
+                                            style="font-weight: bold; color: #005bbb;">Faasi Dega</a></li>
+                                    <li><a class="sub-link" href="Nyatapola-Temple.html">Nyatapola Temple</a></li>
+                                    <li><a class="sub-link" href="Indrayani-Temple.html">Indrayani Temple</a></li>
+                                    <li><a class="sub-link" href="Nritya-Vatsala-Temple.html">Nritya Vatsala Temple</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mainbar-item has-sub">
+                        <a href="#" class="mainbar-link">Festivals</a>
+                        <ul class="sub-menu">
+                            <li><a class="sub-link" href="../festival/bisket.html">Bisket Jatra</a></li>
+                            <li><a class="sub-link" href="../festival/tihar.html">Tihar</a></li>
+                            <li><a class="sub-link" href="../festival/gai.html">Gai Jatra</a></li>
+                            <li><a class="sub-link" href="../festival/dashain.HTML">Dashain</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainbar-item has-sub">
+                        <a href="#" class="mainbar-link">Culture &amp; History</a>
+                        <ul class="sub-menu">
+                            <li><a class="sub-link" href="#">Newari Cuisine</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Image (your exact code, no changes) -->
+        <div class="hero-wrap">
+            <img src="../assets/biska.jpg" class="hero-img" alt="Bisket">
+            <div class="hero-caption">
+                <h1 class="hero-title">Bisket Jatra</h1>
+            </div>
+        </div>
+
+        <!-- Main Description with Weather widget next to text -->
+        <section class="about-wrap">
+            <div class="section-inner">
+                <div class="grid grid-about">
+                    <div class="grid-col-about-title">
+                        <h2 class="about-heading"></h2>
+                    </div>
+
+                    <div class="about-content">
+                        <div class="about-text">
+                            
+                            <p>
+                               <h3> Bisket Jatra: The Festival Where Gods Clash and Cultures Unite</h3>
+                                <p>Bisket Jatra is one of the most vibrant and intense festivals celebrated in Bhaktapur, marking the Nepali New Year with chariot battles, rituals, and massive community gatherings. It combines myth, tradition, and joy into an unforgettable event deeply rooted in Newar heritage.</p>
+
+                            <p>1. Origin & Mythology</p>
+                                <p>-The name “Bisket” is believed to be a corruption of “Bisyaku,” meaning “snake slaughter” in the local Newar language.</p>
+                                    According to legend, a young prince would marry a princess, but every night, the newlywed prince would be found dead. One day, a wise man volunteered to marry the princess and stayed awake at night — discovering two serpents crawling out of her nostrils. He slayed the snakes, breaking the curse. Bisket Jatra celebrates this mythical victory over evil.
+                                    Another popular belief says that the festival marks the end of an old year and the beginning of a new era, symbolized by battles, destruction, and rebirth.</p>
+                        <br>
+                             <p>2. Historical Background</p>
+                                <p>-The exact historical beginning of Bisket Jatra is unclear, but it has been celebrated for centuries, dating back to the Malla period (12th–18th century). King Jagat Jyoti Malla is often credited with formalizing the festival traditions.
+                                    It’s believed that the festival was created as a way to unite different communities, honor local deities, and mark the transition into a new agricultural and spiritual cycle.</p>
+                        <br>
+                            <p>3. When Is It Celebrated?</p>
+                                <p>-Date: Bisket Jatra is celebrated around mid-April, during the last few days of Chaitra and the first few days of Baisakh (according to the Nepali calendar).</p>
+                                <p>-It aligns with Nepali New Year’s Day (Baisakh 1) and generally lasts over 9 days.</p>
+                                <p>-The exact dates vary every year based on the lunar calendar.</p>
+                        <br>
+                            <p>4. Key Locations</p>
+                                <p>-Bhaktapur Durbar Square– Main celebration hub.</p>
+                                <p>-Taumadhi Square – Home of the chariot battles of Bhairab and Bhadrakali.</p>
+                                <p>-(Madhyapur Thimi) – Known for wild color fights and traditional music parades.</p>
+                                <p>-Balkumari (Thimi) – Hosts the vibrant tongue-piercing ritual.</p>
+                        <br>
+                             <p>5. Major Rituals and Events</p>
+                                <p>🛕 Chariot Processions (Rath Yatra)</p>
+                                <p>Huge wooden chariots of Lord Bhairab and Goddess Bhadrakali are pulled by teams of men from rival neighborhoods.
+                                    The chariots are intentionally crashed against each other in a dramatic tug-of-war, symbolizing struggle and energy of renewal.</p>
+                                <p>🐍 Erection of the Lingo (Yosin Pole)</p>
+                                <p>A huge wooden pole (~25 meters) is erected in a ritual ceremony in Lyasinkhel.
+                                    After a few days, the pole is pulled down as a symbol of victory and letting go of the past year.</p>
+                                <p>🎉 Sindoor Jatra (in Thimi)</p>
+                                <p>A spectacular color festival where people throw red vermillion powder (sindoor), sing, and dance to the rhythm of traditional instruments.
+                                    Over a dozen palanquins (khat) of deities are carried and paraded together.</p>
+                                <p>🔪 Tongue Piercing Ritual (Balkumari)</p>
+                                <p>A brave volunteer pierces his tongue with a thick iron spike while carrying flaming torches, believed to purify sins and bring blessings.</p>
+                        <br>
+                            <p>6. Cultural Significance</p>
+                                <p>-Marks the Nepali New Year: It celebrates a fresh start filled with joy and cultural identity.</p>
+                                <p>-Symbol of Community Strength: The intense chariot pulling, music, and rituals bring neighborhoods together in cooperation and rivalry.</p>
+                                <p>-Spiritual Cleansing: Myths, pole ceremonies, and rituals are thought to rid the city of evil and welcome positive energy.</p>
+                        <br>
+                            <p>7. Tourist Tip</p>
+                                <p>If you’re visiting:</p>
+                                <p>-Be ready for crowds, noise, and raw energy — this is not a calm festival!</p>
+                                <p>-Taumadhi Square and Thimi are the best spots to experience the action.</p>
+                                <p>-Wear clothes you don’t mind getting stained if attending Sindoor Jatra.</p>
+                        <br>
+                            <p>8. Hidden Gems</p>
+                                <p>-The chariot wheels are built entirely by hand, using traditional methods.</p>
+                                <p>-No nails or screws are used to assemble the lingo pole — it's done with ropes and joints.</p>
+                                <p>-Many locals prepare special feasts during this time, including beaten rice, buffalo meat, and local liquor.</p>
+
+
+                        
+                        </div>
+
+                        
+
+    </main>
+
+
+
+   
+
+
+    <footer style="background-color: #222; color: white; text-align: center; padding: 15px 0; font-size: 0.9rem;">
+        &copy; © 2025 Copyright
+    </footer>
+
+
+
 </body>
+
 </html>

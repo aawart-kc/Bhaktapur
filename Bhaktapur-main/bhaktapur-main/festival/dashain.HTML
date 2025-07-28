@@ -1,20 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashain</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fassi-Dega Temple</title>
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/avenir-next-lt-pro" rel="stylesheet" />
+
+    <style>
+        body {
+            background: #f9f9f9;
+            font-family: 'Avenir Next LT Pro', sans-serif;
+            color: #2d2d2d;
+            margin: 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Weather widget styles inside content */
+        #weather-widget {
+            background: #e0f0ff;
+            color: #154a7c;
+            font-size: 0.9rem;
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(21, 74, 124, 0.3);
+            max-width: 180px;
+            font-weight: 600;
+            text-align: center;
+            user-select: none;
+            margin-left: auto;
+            margin-bottom: 20px;
+        }
+
+        #weather-widget span.temp {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+
+        .note-box {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 16px;
+            /* Removed yellow border */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            max-width: 1000px;
+            margin: 60px auto;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .note-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .note-box h3 {
+            font-size: 1.8rem;
+            color: #222;
+            /* blue */
+            margin-bottom: 16px;
+        }
+
+        .note-box p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .note-box strong {
+            color: #111;
+        }
+
+
+
+        /* Flex container for description and weather */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            flex: 1 1 600px;
+        }
+
+
+        /* Your requested Gallery styles */
+        .gallery-wrap {
+            background: transparent;
+            padding: 60px 0;
+        }
+
+        .section-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .grid-col-gallery-images {
+            flex: 2;
+        }
+
+        .grid-col-gallery-text {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .gallery-grid-rows {
+            display: flex;
+            gap: 16px;
+        }
+
+        .gallery-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .gallery-box {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-box:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-pic {
+            display: block;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            color: white;
+            width: 100%;
+            padding: 6px 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        .gallery-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .about-subheading {
+            text-align: center;
+            font-size: 2.2rem;
+        }
+    </style>
 </head>
-<body>
-    <h2>Dashain</h2>
-    <img src="../assets/dashain.jpeg" height="800px">
-    <p>
-During Dashain in Bhaktapur, the presence of the Nawa Durga (also spelled Nava Durga) is especially significant and adds a distinct cultural depth to the festival. The Nawa Durga are a group of nine manifestations of Goddess Durga, worshipped together as protectors of the city and its people. In Bhaktapur, these deities are represented by masked dancers who embody divine spirits through an ancient and sacred ritual performance tradition known as the Nawa Durga Dance.
 
-Although the full Nawa Durga dance cycle begins after Dashain (starting from Maha Puja during Tihar and continuing throughout the year), the Dashain festival marks the official reawakening of these deities. During Dashain, special rituals are performed at Taleju Temple and the Nawa Durga Guthi, where masks, costumes, and sacred items are cleansed and reactivated through powerful Tantric rituals. This period symbolizes the rebirth and empowerment of the gods for the coming year.
+<body class="body-main">
+    <main class="main-wrap">
 
-The Nawa Durga masks represent deities like Bhadrakali, Mahakali, Barahi, Brahmayani, Indrayani, and others. These deities are believed to protect Bhaktapur from misfortune and disease. The community holds the Nawa Durga tradition with great respect, and only specially chosen and initiated males are allowed to perform as dancers, following strict religious guidelines.
+        <!-- Topbar -->
+        <nav class="topbar">
+            <div class="topbar-inner">
+                <ul class="topbar-menu">
+                    <li><a class="topbar-link" href="../index.html">Home</a></li>
+                    <li><a class="topbar-link" href="../Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
 
-In essence, during Dashain in Bhaktapur, the Nawa Durga play a crucial spiritual and cultural role, bridging the divine and the earthly, and marking the beginning of a sacred cycle that continues to shape Bhaktapur’s identity and heritage throughout the year.</p>
+        <!-- Mainbar -->
+        <nav class="mainbar">
+            <div class="mainbar-inner">
+                <a class="mainbar-logo-link" href="../index.html"></a>
+                <ul class="mainbar-menu">
+                    <li class="mainbar-item has-sub">
+                        <a href="#" class="mainbar-link">Information</a>
+                        <ul class="sub-menu">
+                            <li class="sub-item has-sub">
+                                <a href="#" class="sub-link">Historic Landmarks</a>
+                                <ul class="sub-menu sub-nested">
+                                    <li><a class="sub-link" href="faasi-Dega.html"
+                                            style="font-weight: bold; color: #005bbb;">Faasi Dega</a></li>
+                                    <li><a class="sub-link" href="Nyatapola-Temple.html">Nyatapola Temple</a></li>
+                                    <li><a class="sub-link" href="Indrayani-Temple.html">Indrayani Temple</a></li>
+                                    <li><a class="sub-link" href="Nritya-Vatsala-Temple.html">Nritya Vatsala Temple</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mainbar-item has-sub">
+                        <a href="#" class="mainbar-link">Festivals</a>
+                        <ul class="sub-menu">
+                            <li><a class="sub-link" href="../festival/bisket.html">Bisket Jatra</a></li>
+                            <li><a class="sub-link" href="../festival/tihar.html">Tihar</a></li>
+                            <li><a class="sub-link" href="../festival/gai.html">Gai Jatra</a></li>
+                            <li><a class="sub-link" href="../festival/dashain.HTML">Dashain</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainbar-item has-sub">
+                        <a href="#" class="mainbar-link">Culture &amp; History</a>
+                        <ul class="sub-menu">
+                            <li><a class="sub-link" href="#">Newari Cuisine</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Image (your exact code, no changes) -->
+        <div class="hero-wrap">
+            <img src="../assets/dashain.jpeg" class="hero-img" alt="Dashain">
+            <div class="hero-caption">
+                <h1 class="hero-title">Dashain</h1>
+            </div>
+        </div>
+
+        <!-- Main Description with Weather widget next to text -->
+        <section class="about-wrap">
+            <div class="section-inner">
+                <div class="grid grid-about">
+                    <div class="grid-col-about-title">
+                        <h2 class="about-heading"></h2>
+                    </div>
+
+                    <div class="about-content">
+                        <div class="about-text">
+                            
+                           <p>
+  <h3>Dashain: The Festival of Victory, Family, and Renewal</h3>
+  <p>Dashain is Nepal’s longest and most important Hindu festival, celebrated with great enthusiasm and devotion across the country. It marks the victory of good over evil and symbolizes the triumph of goddess Durga over the demon Mahishasura. Dashain is a time for family reunions, blessings, and renewal of faith.</p>
+
+<p>1. Origin & Mythology</p>
+  <p>-Dashain commemorates the victory of goddess Durga over the buffalo demon Mahishasura, symbolizing the triumph of good over evil.</p>
+  <p>-The festival also honors other manifestations of the goddess, including Kali, Lakshmi, and Saraswati.</p>
+  <p>-It is rooted in Hindu epics and local legends that emphasize courage, righteousness, and divine protection.</p>
+<br>
+
+<p>2. Historical Background</p>
+  <p>-Dashain has been celebrated for centuries in Nepal, with references dating back to the Licchavi era (around 400–750 AD).</p>
+  <p>-It integrates Vedic rituals with Nepali cultural traditions, making it a unifying festival for diverse communities.</p>
+  <p>-Traditionally, Dashain was also a time for kings and leaders to receive blessings and assert their authority.</p>
+<br>
+
+<p>3. When Is It Celebrated?</p>
+  <p>-Dashain usually takes place in September or October, lasting for 15 days.</p>
+  <p>-The festival begins on the first day of the bright lunar fortnight of Ashwin and culminates on the full moon day (Vijaya Dashami).</p>
+  <p>-Key days include Ghatasthapana (beginning), Fulpati, Maha Ashtami, Maha Navami, and Vijaya Dashami.</p>
+<br>
+
+<p>4. Key Rituals and Events</p>
+  <p>🌾 Ghatasthapana</p>
+  <p>The festival starts with planting jamara (barley shoots) in a sacred pot, symbolizing prosperity and growth.</p>
+
+  <p>🕯️ Fulpati</p>
+  <p>On this day, sacred plants and offerings are brought to the royal palace or local temples, symbolizing divine presence.</p>
+
+  <p>🔥 Maha Ashtami and Maha Navami</p>
+  <p>These are days of worship and animal sacrifices to goddess Durga, seeking her blessings for protection and power.</p>
+
+  <p>🎉 Vijaya Dashami</p>
+  <p>The most important day when elders put tika (a mixture of rice, yogurt, and vermilion) and jamara on the foreheads of younger relatives, blessing them with prosperity and good fortune.</p>
+<br>
+
+<p>5. Cultural Significance</p>
+  <p>-Dashain symbolizes the victory of good over evil and the power of divine feminine energy.</p>
+  <p>-It strengthens family ties as people gather from far and wide to celebrate together.</p>
+  <p>-The festival promotes social harmony, generosity, and gratitude through communal feasting and rituals.</p>
+<br>
+
+<p>6. Tourist Tip</p>
+  <p>If you’re visiting:</p>
+  <p>-Experience the vibrant markets and fairs that spring up during Dashain.</p>
+  <p>-Respect local customs, especially during tika ceremonies.</p>
+  <p>-Try traditional foods like goat curry and sel roti served at family gatherings.</p>
+<br>
+
+<p>7. Hidden Gems</p>
+  <p>-Jamara is grown on special soil from sacred places, believed to carry blessings.</p>
+  <p>–The swing (ping) tradition is popular among children during Dashain in rural areas.</p>
+  <p>-Dashain songs and folk dances add to the festive atmosphere in villages and towns alike.</p>
+
+                        </div>
+
+                        
+
+    </main>
+
+
+
+   
+
+
+    <footer style="background-color: #222; color: white; text-align: center; padding: 15px 0; font-size: 0.9rem;">
+        &copy; © 2025 Copyright
+    </footer>
+
+
+
 </body>
+
 </html>
