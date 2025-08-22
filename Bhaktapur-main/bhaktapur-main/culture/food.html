@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newar Cuisine</title>
+ <link href="../css/styles.css" rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/avenir-next-lt-pro" rel="stylesheet" />
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f5f0;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #6b3e26;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .card {
+        background-color: #fff8f0;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .card h3 {
+        margin: 10px 0;
+        color: #6b3e26;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+        background-color: #fff8f0;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 15px;
+        width: 80%;
+        max-width: 500px;
+        position: relative;
+    }
+
+    .close {
+        color: #6b3e26;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover {
+        color: #ff4d4d;
+    }
+</style>
+</head>
+<body>
+
+
+
+<body class="body-main">
+    <main class="main-wrap">
+
+        <!-- Topbar -->
+        <nav class="topbar">
+            <div class="topbar-inner">
+                <ul class="topbar-menu">
+                    <li><a class="topbar-link" href="../index.html">Home</a></li>
+                    <li><a class="topbar-link" href="../Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mainbar -->
+        <nav class="mainbar">
+            <div class="mainbar-inner">
+                <a class="mainbar-logo-link" href="../index.html"></a>
+                <ul class="mainbar-menu">
+                    <li class="mainbar-item has-sub">
+                        <a href="#" class="mainbar-link">Information</a>
+                        <ul class="sub-menu">
+                            <li class="sub-item has-sub">
+                                <a href="#" class="sub-link">Historic Landmarks</a>
+                                <ul class="sub-menu sub-nested">
+                                      <li><a class="sub-link" href="../info-temple/faasi-Dega.html">Faasi Dega</a></li>
+                                    <li><a class="sub-link" href="../info-temple/Nyatapola-Temple.html">Nyatapola Temple</a></li>
+                                    <li><a class="sub-link" href="../info-temple/Indrayani-Temple.html">Indrayani Temple</a></li>
+                                    <li><a class="sub-link" href="../info-temple/Nritya-Vatsala-Temple.html">Nritya Vatsala Temple</a>
+                                     <li><a class="sub-link" href="../info-temple/Barahi.html">Barahi Temple</a></li>
+                                     <li><a class="sub-link" href="../info-temple/Bhadrakali.html">Bhadrakali Temple</a></li>
+                                     <li><a class="sub-link" href="../info-temple/Brahmayani.html">Brahmayani Temple</a></li>
+                                     <li><a class="sub-link" href="../info-temple/Kumari.html">Kumari Temple</a></li>
+                                     <li><a class="sub-link" href="../info-temple/Mahakali.html">Mahakali Temple</a></li>
+                                     <li><a class="sub-link" href="../info-temple/Mahalaxmi.html">Mahalaxmi Temple</a></li>
+                                     <li><a class="sub-link" href="../info-temple/Maheshwari.html">Maheshwari Temple</a></li>
+                                     <li><a class="sub-link" href="../info-temple/Tripurasundari.html">Tripurasundari Temple</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mainbar-item has-sub">
+                        <a href="#" class="mainbar-link">Festivals</a>
+                        <ul class="sub-menu">
+                           <li><a class="sub-link" href="../festival/bisket.html">Bisket Jatra</a></li>
+                            <li><a class="sub-link" href="../festival/tihar.html">Tihar</a></li>
+                            <li><a class="sub-link" href="../festival/gai.html">Gai Jatra</a></li>
+                            <li><a class="sub-link" href="../festival/dashain.">Dashain</a></li>
+                             <li><a class="sub-link" href="../festival/gathamaga.html">Gathamaga Charya</a></li>
+                            <li><a class="sub-link" href="../festival/holi.html">Holi</a></li>
+                             <li><a class="sub-link" href="../festival/indra.html">Indra Jatra</a></li>
+                              <li><a class="sub-link" href="../festival/navadurga.html">NavaDurga Nach</a></li>
+                              <li><a class="sub-link" href="../festival/sithinakha.html">Sithi Nakha</a></li>
+                              <li><a class="sub-link" href="../festival/yomari.html">Yomari Purnima</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainbar-item has-sub">
+                        <a href="#" class="mainbar-link">Culture &amp; History</a>
+                        <ul class="sub-menu">
+                            <li><a class="sub-link" href="food.html">Newari Cuisine</a></li>
+                            <li><a class="sub-link" href="histoty.html">Bhaktapur's history</a></li>
+                            <li><a class="sub-link" href="dress.html">Newari dress</a></li>
+                            </ul>
+          </li>
+
+
+                             <li class="mainbar-item has-sub">
+            <a href="../bhaktapur-main/itinerary plan/itineary.html" class="mainbar-link">Itinerary Plan</a>
+            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+<h1>Newar Cuisine</h1>
+<div class="grid">
+    <!-- Card Example -->
+    <div class="card" onclick="showDetail('Bara (Wa:)', 'Savory lentil pancakes, sometimes topped with egg or minced meat.Bara is a popular Newari dish from the Kathmandu Valley, especially enjoyed in festivals, special occasions, and street food settings. It is essentially a savory lentil pancake made primarily from black lentils (urad dal).')">
+        <img src="../assets/bara.jpg" alt="Bara">
+        <h3>Bara (Wa:)</h3>
+    </div>
+
+    <div class="card" onclick="showDetail('Yomari', 'Sweet dumplings made of rice flour filled with jaggery and sesame seeds, typically eaten during Yomari Punhi festival.Yomari is a traditional Newari sweet dumpling from Nepal, especially associated with the Yomari Punhi festival, which celebrates the end of the rice harvest. The name Yomari literally means “delicacy” or “special food” in Newari.')">
+        <img src="../assets/yomari.jpg" alt="Yomari">
+        <h3>Yomari</h3>
+    </div>
+
+    <div class="card" onclick="showDetail('Choila', 'Spiced grilled buffalo or chicken, often served with beaten rice (Baji).Choila is a spicy grilled meat dish from the Newar cuisine of the Kathmandu Valley. It is commonly made with buffalo (buff), chicken, or mutton, and is usually served with beaten rice (Baji) or as a side dish in festivals and special occasions.')">
+        <img src="../assets/choila.jpg" alt="Choila">
+        <h3>Choila</h3>
+    </div>
+
+    <div class="card" onclick="showDetail('Kwati', 'A mixed bean soup eaten during the festival of Janai Purnima, rich in protein.Kwati is a mixed bean soup, traditionally eaten during the Janai Purnima festival. It is considered very nutritious and protein-rich.')">
+        <img src="../assets/kwati.jpeg" alt="Kwati">
+        <h3>Kwati</h3>
+    </div>
+
+    <div class="card" onclick="showDetail('Chatamari', 'Known as “Newari pizza,” a rice flour crepe topped with meat, eggs, and spices.')">
+        <img src="../assets/chatamari.jpg" alt="Chatamari">
+        <h3>Chatamari</h3>
+    </div>
+
+    <div class="card" onclick="showDetail('Baji & Samay Baji', 'A traditional platter of beaten rice, fermented vegetables, meat, and spicy condiments.Samay Baji is a ceremonial platter of Newari foods, traditionally served during rituals, marriages, and festivals')">
+        <img src="../assets/baji.jpeg" alt="Samay Baji">
+        <h3>Baji & Samay Baji</h3>
+    </div>
+
+    <div class="card" onclick="showDetail('Aloo Achaar & Gundu', 'Potato pickle and other fermented or spicy vegetable sides.')">
+        <img src="../assets/aloo.jpg" alt="Aloo Achaar">
+        <h3>Aloo Achaar & Gundu</h3>
+    </div>
+
+    <div class="card" onclick="showDetail('Aila', 'Traditional distilled alcohol, usually made from rice or millet, served during rituals.Aila is a traditional Newari distilled alcoholic drink, typically made from rice, millet, or maize.')">
+        <img src="../assets/aaila.jpg" alt="Aila">
+        <h3>Aila</h3>
+    </div>
+
+    
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-desc"></p>
+  </div>
+</div>
+
+<script>
+function showDetail(title, desc) {
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-desc').innerText = desc;
+    document.getElementById('modal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('modal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
